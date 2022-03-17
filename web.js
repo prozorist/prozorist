@@ -1,6 +1,13 @@
 const data = require('./data.js')
 
-const html = '<html></html>'
+const table = () => {
+    for (const i in Object.entries(data)) {
+
+    }
+    return ''
+}
+
+const html = `<html><body><table>${table()}</table></body></html>`
 
 module.exports = {
     /** @readonly */
