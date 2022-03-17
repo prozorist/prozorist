@@ -1,0 +1,22 @@
+{
+  "name": "prozorist",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prozorist/prozorist.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prozorist/prozorist/issues"
+  },
+  "homepage": "https://github.com/prozorist/prozorist#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
