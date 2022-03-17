@@ -1,4 +1,5 @@
 const data = require('./data.js')
+const list = require('functionalscript/types/list/index.js')
 
 const table = () => {
     for (const i in Object.entries(data)) {
