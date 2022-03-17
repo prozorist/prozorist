@@ -20,6 +20,7 @@
   "homepage": "https://github.com/prozorist/prozorist#readme",
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "functionalscript": "github:functionalscript/functionalscript",
     "typescript": "^4.6.2"
   }
 }
