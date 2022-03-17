@@ -4,6 +4,8 @@
 
 /** @typedef {{ readonly[k in string]: Record}} Data */
 
+// source: https://www.msn.com/en-us/money/companies/these-companies-continue-to-do-business-in-russia/ar-AAUQUdP?ocid=uxbndlbing
+
 /** @type {Data} */
 const data = {
     'Abbott Labs': { country: 'USA' },
