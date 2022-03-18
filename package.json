@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tsc",
+    "test": "tsc && node ./test.js",
     "build": "tsc && node ./index.js",
     "clean-build": "npm ci && npm run build"
   },
