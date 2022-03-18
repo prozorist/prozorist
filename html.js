@@ -3,9 +3,27 @@ const object = require('functionalscript/types/object/index.js')
 const operator = require('functionalscript/types/function/operator/index.js')
 const { compose } = require('functionalscript/types/function/index.js')
 
-/** @typedef {readonly[string, Nodes]} Element2 */
+/**
+ * @typedef {|
+ *  'html' |
+ *  'body' |
+ *  'a' |
+ *  'div' |
+ *  'table' |
+ *  'tr' |
+ *  'td' |
+ *  'head'} Tag
+ */
 
-/** @typedef {readonly[string, Attributes, Nodes]} Element3*/
+/**
+ * @typedef {|
+ *  'meta'
+ * } ShortTag
+ */
+
+/** @typedef {readonly[Tag, Nodes]} Element2 */
+
+/** @typedef {readonly[Tag, Attributes, Nodes]} Element3*/
 
 /** @typedef {Element2 | Element3} Element */
 

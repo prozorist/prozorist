@@ -11,7 +11,13 @@ const tr = ([name, { country }]) => ['tr', [['td', [name]], ['td', [country]]]]
 /** @type {html.Element} */
 const table = ['table', list.map(tr)(Object.entries(data.data))]
 
-const indexHtml = html.htmlToString(['html', { lang: 'en'}, [['body', [table]]]])
+/** @type {html.Element} */
+const ih = ['html', { lang: 'en' }, [
+    ['head', []],
+    ['body', [table]],
+]]
+
+const indexHtml = html.htmlToString(['html', { lang: 'en'}, [['head', []], ['body', [table]]]])
 
 module.exports = {
     /** @readonly */
