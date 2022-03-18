@@ -20,8 +20,7 @@ const textEscapeCharCode = code => {
     }
 }
 
-/** @type {(s: string) => list.List<string>} */
-const textEscape = s => list.map(textEscapeCharCode)(list.toCharCodes(s))
+const textEscape = compose(list.toCharCodes)(list.map(textEscapeCharCode))
 
 /** @type {(n: Node) => list.List<string>} */
 const node = n => typeof n === 'string' ? textEscape(n) : element(n)
