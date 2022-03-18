@@ -12,7 +12,8 @@ const { compose } = require('functionalscript/types/function/index.js')
  *  'table' |
  *  'tr' |
  *  'td' |
- *  'head'} Tag
+ *  'head'|
+ *  'title'} Tag
  */
 
 /**
@@ -21,11 +22,11 @@ const { compose } = require('functionalscript/types/function/index.js')
  * } ShortTag
  */
 
-/** @typedef {readonly[Tag, Nodes]} Element2 */
+/** @typedef {readonly[ShortTag, Attributes]} Element2 */
 
 /** @typedef {readonly[Tag, Attributes, Nodes]} Element3*/
 
-/** @typedef {Element3} Element */
+/** @typedef {Element2 | Element3} Element */
 
 /**
  * @typedef {{
@@ -66,12 +67,10 @@ const attributes = compose(Object.entries)(list.flatMap(attribute))
 
 /** @type {(element: Element) => list.List<string>} */
 const element = e => {
-    /*
     if (e.length === 2) {
-        const [tag, ns] = e
-        return list.flat([[`<`, tag, `>`], nodes(ns), [`</`, tag, `>`]])
+        const [tag, a] = e
+        return list.flat([[`<`, tag], attributes(a), [`/>`]])
     }
-    */
     const [tag, a, ns] = e
     return list.flat([['<', tag], attributes(a), ['>'], nodes(ns), ['</', tag, '>']])
 }

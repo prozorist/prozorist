@@ -13,7 +13,11 @@ const table = ['table', {}, list.map(tr)(Object.entries(data.data))]
 
 /** @type {html.Element} */
 const ih = ['html', { lang: 'en' }, [
-    ['head', {}, []],
+    ['head', {}, [
+        ['meta', { charset: 'utf-8' }],
+        ['meta', { name: 'viewport', content: 'width=device-width'}],
+        ['title', {}, ['Prozorist']],
+    ]],
     ['body', {}, [table]],
 ]]
 
