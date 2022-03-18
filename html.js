@@ -6,7 +6,11 @@ const { compose } = require('functionalscript/types/function/index.js')
 
 /** @typedef {Element | string} Node */
 
-/** @type {(code: number) => string} */
+/**
+ * https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-in-html
+ *
+ * @type {(code: number) => string}
+ */
 const textEscapeCharCode = code => {
     switch(code) {
         case 0x26: return '&amp;'
