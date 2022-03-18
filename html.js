@@ -25,7 +25,7 @@ const { compose } = require('functionalscript/types/function/index.js')
 
 /** @typedef {readonly[Tag, Attributes, Nodes]} Element3*/
 
-/** @typedef {Element2 | Element3} Element */
+/** @typedef {Element3} Element */
 
 /**
  * @typedef {{
@@ -66,10 +66,12 @@ const attributes = compose(Object.entries)(list.flatMap(attribute))
 
 /** @type {(element: Element) => list.List<string>} */
 const element = e => {
+    /*
     if (e.length === 2) {
         const [tag, ns] = e
         return list.flat([[`<`, tag, `>`], nodes(ns), [`</`, tag, `>`]])
     }
+    */
     const [tag, a, ns] = e
     return list.flat([['<', tag], attributes(a), ['>'], nodes(ns), ['</', tag, '>']])
 }
