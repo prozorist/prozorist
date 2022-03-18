@@ -18,7 +18,10 @@ const ih = ['html', { lang: 'en' }, [
         ['meta', { name: 'viewport', content: 'width=device-width'}],
         ['title', {}, ['Prozorist']],
     ]],
-    ['body', {}, [table]],
+    ['body', {}, [
+        table,
+        ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, ['Contribute To The List']]
+    ]],
 ]]
 
 const indexHtml = html.htmlToString(ih)
