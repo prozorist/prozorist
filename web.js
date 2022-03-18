@@ -1,15 +1,20 @@
 const data = require('./data.js')
 const list = require('functionalscript/types/list/index.js')
 const object = require('functionalscript/types/object/index.js')
+const operator = require('functionalscript/types/function/operator')
+const html = require('./html.js')
 
-/** @type {(_: object.Entry<data.Record>) => (_: string) => string} */
-const tr = ([name, record]) => s => `${s}<tr><td>${name}</td><td>${record.country}</td></tr>`
+//
 
-const table = () => list.reduce(tr)('')(Object.entries(data.data))
+/** @type {(_: object.Entry<data.Record>) => html.Element} */
+const tr = ([name, { country }]) => ['tr', [['td', [name]], ['td', [country]]]]
 
-const html = `<html><body><table>${table()}</table></body></html>`
+/** @type {html.Element} */
+const table = ['table', list.map(tr)(Object.entries(data.data))]
+
+const indexHtml = html.elementToString(['html', [['body', [table]]]])
 
 module.exports = {
     /** @readonly */
-    html,
+    indexHtml,
 }
