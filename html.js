@@ -5,19 +5,34 @@ const { compose } = require('functionalscript/types/function/index.js')
 
 /**
  * @typedef {|
- *  'html' |
- *  'body' |
  *  'a' |
+ *  'b' |
+ *  'body' |
+ *  'canvas' |
  *  'div' |
+ *  'h1' |
+ *  'h2' |
+ *  'h3' |
+ *  'h4' |
+ *  'h5' |
+ *  'h6' |
+ *  'head' |
+ *  'html' |
+ *  'label' |
+ *  'p' |
+ *  'pre' |
+ *  'script' |
  *  'table' |
- *  'tr' |
  *  'td' |
- *  'head'|
- *  'title'} Tag
+ *  'title' |
+ *  'tr'
+ * } Tag
  */
 
 /**
  * @typedef {|
+ *  'input' |
+ *  'link' |
  *  'meta'
  * } ShortTag
  */
