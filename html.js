@@ -6,11 +6,21 @@ const { compose } = require('functionalscript/types/function/index.js')
 
 /** @typedef {Element | string} Node */
 
+/** @type {(code: number) => string} */
+const textEscapeCharCode = code => {
+    switch(code) {
+        case 0x26: return '&amp;'
+        case 0x3C: return '&lt;'
+        case 0x3E: return '&gt;'
+        default: return String.fromCharCode(code)
+    }
+}
+
 /** @type {(s: string) => list.List<string>} */
-const escape = s => [s];
+const textEscape = s => list.map(textEscapeCharCode)(list.toCharCodes(s))
 
 /** @type {(n: Node) => list.List<string>} */
-const node = n => typeof n === 'string' ? escape(n) : element(n)
+const node = n => typeof n === 'string' ? textEscape(n) : element(n)
 
 const nodes = list.flatMap(node)
 
