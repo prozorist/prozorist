@@ -1,3 +1,3 @@
-const { html } = require('./web.js')
+const { indexHtml } = require('./web.js')
 
-// console.log(html)
+console.log(indexHtml)

@@ -1,4 +1,4 @@
-const { html } = require('./web.js')
+const { indexHtml } = require('./web.js')
 const { writeFileSync } = require('fs')
 
-writeFileSync('web/index.html', html)
+writeFileSync('web/index.html', indexHtml)
