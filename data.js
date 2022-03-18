@@ -11,6 +11,7 @@ const data = {
     'Abbott Labs': { country: 'USA' },
     'Accor': { country: 'France' },
     'Hyat': { country: 'USA' },
+    'Lamoda': { country: 'France' },
     'Marriott': { country: 'USA' },
     'Amway': { country: 'USA' },
     'Dunkin Donuts': { country: 'USA' },
