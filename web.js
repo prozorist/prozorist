@@ -21,7 +21,7 @@ const ih = ['html', { lang: 'en' }, [
     ['body', {}, [table]],
 ]]
 
-const indexHtml = html.htmlToString(['html', { lang: 'en'}, [['head', {}, []], ['body', {}, [table]]]])
+const indexHtml = html.htmlToString(ih)
 
 module.exports = {
     /** @readonly */
