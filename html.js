@@ -67,12 +67,15 @@ const attributes = compose(Object.entries)(list.flatMap(attribute))
 
 /** @type {(element: Element) => list.List<string>} */
 const element = e => {
-    if (e.length === 2) {
-        const [tag, a] = e
-        return list.flat([[`<`, tag], attributes(a), [`/>`]])
+    const f = () => {
+        if (e.length === 2) {
+            const [tag, a] = e
+            return [[`<`, tag], attributes(a), [`/>`]]
+        }
+        const [tag, a, ns] = e
+        return [['<', tag], attributes(a), ['>'], nodes(ns), ['</', tag, '>']]
     }
-    const [tag, a, ns] = e
-    return list.flat([['<', tag], attributes(a), ['>'], nodes(ns), ['</', tag, '>']])
+    return list.flat(f())
 }
 
 const html = compose(element)(list.concat(['<!DOCTYPE html>']))
