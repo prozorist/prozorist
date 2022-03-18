@@ -16,7 +16,8 @@ const ih = ['html', { lang: 'en' }, [
     ['head', {}, [
         ['meta', { charset: 'utf-8' }],
         ['meta', { name: 'viewport', content: 'width=device-width'}],
-        ['title', {}, ['Prozorist']],
+        ['link', { rel: 'stylesheet', href: 'index.css' }],
+        ['title', {}, ['FrontList.Finance']],
     ]],
     ['body', {}, [
         table,
