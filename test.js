@@ -9,4 +9,4 @@ const html = require('./html.js')
     // console.log(s)
 }
 
-// console.log(indexHtml)
+console.log(indexHtml)
