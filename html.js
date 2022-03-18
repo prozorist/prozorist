@@ -1,8 +1,39 @@
 const list = require('functionalscript/types/list/index.js')
+const object = require('functionalscript/types/object/index.js')
 const operator = require('functionalscript/types/function/operator/index.js')
 const { compose } = require('functionalscript/types/function/index.js')
 
-/** @typedef {readonly[string, list.List<Node>]} Element */
+/**
+ * @typedef {|
+ *  'html' |
+ *  'body' |
+ *  'a' |
+ *  'div' |
+ *  'table' |
+ *  'tr' |
+ *  'td' |
+ *  'head'} Tag
+ */
+
+/**
+ * @typedef {|
+ *  'meta'
+ * } ShortTag
+ */
+
+/** @typedef {readonly[Tag, Nodes]} Element2 */
+
+/** @typedef {readonly[Tag, Attributes, Nodes]} Element3*/
+
+/** @typedef {Element2 | Element3} Element */
+
+/**
+ * @typedef {{
+ *  readonly[k in string]: string
+ * }} Attributes
+ */
+
+/** @typedef {list.List<Node>} Nodes */
 
 /** @typedef {Element | string} Node */
 
@@ -11,8 +42,9 @@ const { compose } = require('functionalscript/types/function/index.js')
  *
  * @type {(code: number) => string}
  */
-const textEscapeCharCode = code => {
-    switch(code) {
+const escapeCharCode = code => {
+    switch (code) {
+        case 0x22: return '&quot;'
         case 0x26: return '&amp;'
         case 0x3C: return '&lt;'
         case 0x3E: return '&gt;'
@@ -20,21 +52,37 @@ const textEscapeCharCode = code => {
     }
 }
 
-const textEscape = compose(list.toCharCodes)(list.map(textEscapeCharCode))
+const escape = compose(list.toCharCodes)(list.map(escapeCharCode))
 
 /** @type {(n: Node) => list.List<string>} */
-const node = n => typeof n === 'string' ? textEscape(n) : element(n)
+const node = n => typeof n === 'string' ? escape(n) : element(n)
 
 const nodes = list.flatMap(node)
 
-/** @type {(element: Element) => list.List<string>} */
-const element = ([tag, ns]) => list.flat([[`<`, tag, `>`], nodes(ns), [`</`, tag, `>`]])
+/** @type {(a: object.Entry<string>) => list.List<string>} */
+const attribute = ([name, value]) => list.flat([[' ', name, '="'], escape(value), ['"']])
 
-const elementToString = compose(element)(list.fold(operator.concat)(''))
+const attributes = compose(Object.entries)(list.flatMap(attribute))
+
+/** @type {(element: Element) => list.List<string>} */
+const element = e => {
+    if (e.length === 2) {
+        const [tag, ns] = e
+        return list.flat([[`<`, tag, `>`], nodes(ns), [`</`, tag, `>`]])
+    }
+    const [tag, a, ns] = e
+    return list.flat([['<', tag], attributes(a), ['>'], nodes(ns), ['</', tag, '>']])
+}
+
+const html = compose(element)(list.concat(['<!DOCTYPE html>']))
+
+const htmlToString = compose(html)(list.fold(operator.concat)(''))
 
 module.exports = {
     /** @readonly */
     element,
     /** @readonly */
-    elementToString,
+    html,
+    /** @readonly */
+    htmlToString,
 }
