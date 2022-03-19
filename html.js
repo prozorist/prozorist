@@ -24,6 +24,7 @@ const { compose } = require('functionalscript/types/function/index.js')
  *  'script' |
  *  'table' |
  *  'td' |
+ *  'th' |
  *  'title' |
  *  'tr'
  * } Tag
@@ -31,6 +32,7 @@ const { compose } = require('functionalscript/types/function/index.js')
 
 /**
  * @typedef {|
+ *  'img' |
  *  'input' |
  *  'link' |
  *  'meta'

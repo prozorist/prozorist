@@ -1,6 +1,11 @@
 /** @typedef {'USA' | 'France' | 'Switzerland' | 'Russia' } Country */
 
-/** @typedef {{ readonly country: Country }} Record */
+/**
+ * @typedef {{
+ *  readonly country: Country,
+ *  readonly notes?: string,
+ * }} Record
+ */
 
 /** @typedef {{ readonly[k in string]: Record}} Data */
 

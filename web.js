@@ -4,10 +4,7 @@ const object = require('functionalscript/types/object/index.js')
 const html = require('./html.js')
 
 /** @type {(_: object.Entry<data.Record>) => html.Element} */
-const tr = ([name, { country }]) => ['tr', [['td', [name]], ['td', [country]]]]
-
-/** @type {html.Element} */
-const table = ['table', {}, list.map(tr)(Object.entries(data.data))]
+const tr = ([name, { country }]) => ['tr', [['td', { class: 'company' }, [name]], ['td', [country]]]]
 
 /** @type {html.Element} */
 const ih = ['html', { lang: 'en' }, [
@@ -19,10 +16,22 @@ const ih = ['html', { lang: 'en' }, [
         ['title', ['FrontList.Finance']],
     ]],
     ['body', [
-        table,
-        ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, [
-            'Contribute To The List',
+        ['div', { id: 'header' }, [
+            ['table', [
+                ['tr', [
+                    ['td', { id: 'name' }, [
+                        ['img', { src: 'favicon.ico' }]
+                    ]],
+                    ['td', { id: 'edit' }, [
+                        ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, [
+                            'Edit On GitHub',
+                        ]],
+                    ]],
+                ]],
+            ]],
         ]],
+        ['div', { id: 'about' }, ['List of companies that cooperate with the Russian Federation']],
+        ['table', { id: 'list' }, list.map(tr)(Object.entries(data.data))],
     ]],
 ]]
 

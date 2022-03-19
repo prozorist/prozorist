@@ -1,6 +1,7 @@
 body {
     font-family: Arial;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
+    margin: 0;
 }
 
 a {
@@ -10,4 +11,53 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 1000px;
+}
+
+#edit {
+    padding: 10px;
+    text-align: right;
+}
+
+#edit a {
+    background-color: #0080FF;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#edit a:hover {
+    text-decoration: none;
+}
+
+#header {
+    padding: 10px;
+    background-color: white;
+}
+
+#about {
+    padding: 10px;
+    text-align: center;
+    background: orange;
+    font-weight: bold;
+}
+
+#list {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#name {
+    font-weight: bold;
+}
+
+.company {
+    font-weight: bold;
 }
