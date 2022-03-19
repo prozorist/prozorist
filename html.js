@@ -37,11 +37,15 @@ const { compose } = require('functionalscript/types/function/index.js')
  * } ShortTag
  */
 
-/** @typedef {readonly[ShortTag, Attributes]} Element2 */
+/** @typedef {readonly[ShortTag]} ShortElement1*/
+
+/** @typedef {readonly[ShortTag, Attributes]} ShortElement2 */
+
+/** @typedef {readonly[Tag, readonly Node[]]} Element2 */
 
 /** @typedef {readonly[Tag, Attributes, Nodes]} Element3*/
 
-/** @typedef {Element2 | Element3} Element */
+/** @typedef {ShortElement1 | ShortElement2 | Element2 | Element3} Element */
 
 /**
  * @typedef {{
@@ -78,17 +82,25 @@ const nodes = list.flatMap(node)
 /** @type {(a: object.Entry<string>) => list.List<string>} */
 const attribute = ([name, value]) => list.flat([[' ', name, '="'], escape(value), ['"']])
 
+/** @type {(a: Attributes) => list.List<string>} */
 const attributes = compose(Object.entries)(list.flatMap(attribute))
 
 /** @type {(element: Element) => list.List<string>} */
 const element = e => {
     const f = () => {
-        if (e.length === 2) {
-            const [tag, a] = e
-            return [[`<`, tag], attributes(a), [`/>`]]
+        switch (e.length) {
+            case 1: { return [[`<`, e[0], '/>']] }
+            case 2: {
+                const [tag, a] = e
+                return a instanceof Array ?
+                    [['<', tag, '>'], nodes(a), ['</', tag, '>']] :
+                    [[`<`, tag], attributes(a), [`/>`]]
+            }
+            default: {
+                const [tag, a, ns] = e
+                return [['<', tag], attributes(a), ['>'], nodes(ns), ['</', tag, '>']]
+            }
         }
-        const [tag, a, ns] = e
-        return [['<', tag], attributes(a), ['>'], nodes(ns), ['</', tag, '>']]
     }
     return list.flat(f())
 }
