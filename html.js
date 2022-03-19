@@ -32,6 +32,7 @@ const { compose } = require('functionalscript/types/function/index.js')
 
 /**
  * @typedef {|
+ *  'img' |
  *  'input' |
  *  'link' |
  *  'meta'

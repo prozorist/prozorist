@@ -54,6 +54,10 @@ table {
     border-radius: 20px;
 }
 
+#name {
+    font-weight: bold;
+}
+
 .company {
     font-weight: bold;
 }

@@ -19,7 +19,10 @@ const ih = ['html', { lang: 'en' }, [
         ['div', { id: 'header' }, [
             ['table', [
                 ['tr', [
-                    ['td', []],
+                    ['td', { id: 'name' }, [
+                        ['img', { src: 'favicon.ico' }],
+                        'frontlist.finance'
+                    ]],
                     ['td', { id: 'edit' }, [
                         ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, [
                             'Edit On GitHub',
