@@ -29,7 +29,7 @@ const ih = ['html', { lang: 'en' }, [
             ]],
         ]],
         ['div', { id: 'about' }, ['List of companies that cooperate with the Russian Federation']],
-        ['table', {}, list.map(tr)(Object.entries(data.data))],
+        ['table', { id: 'list' }, list.map(tr)(Object.entries(data.data))],
     ]],
 ]]
 

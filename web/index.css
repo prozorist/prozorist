@@ -21,12 +21,15 @@ table {
 }
 
 #edit {
+    padding: 10px;
     text-align: right;
 }
 
 #edit a {
     background-color: #0080FF;
     color: white;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 #edit a:hover {
@@ -34,12 +37,21 @@ table {
 }
 
 #header {
+    padding: 10px;
     background-color: white;
 }
 
 #about {
+    padding: 10px;
     text-align: center;
     background: orange;
+    font-weight: bold;
+}
+
+#list {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .company {
