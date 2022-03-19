@@ -17,6 +17,7 @@ const data = {
     'Accor': { country: 'France' },
     'Hyat': { country: 'USA' },
     'Marriott': { country: 'USA' },
+    'Metro AG': { country: 'Germany' },
     'Amway': { country: 'USA' },
     'Dunkin Donuts': { country: 'USA' },
     'Cargill': { country: 'USA' },
