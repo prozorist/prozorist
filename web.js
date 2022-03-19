@@ -3,8 +3,6 @@ const list = require('functionalscript/types/list/index.js')
 const object = require('functionalscript/types/object/index.js')
 const html = require('./html.js')
 
-//
-
 /** @type {(_: object.Entry<data.Record>) => html.Element} */
 const tr = ([name, { country }]) => ['tr', [['td', [name]], ['td', [country]]]]
 
