@@ -24,6 +24,15 @@ table {
     text-align: right;
 }
 
+#edit a {
+    background-color: #0080FF;
+    color: white;
+}
+
+#edit a:hover {
+    text-decoration: none;
+}
+
 #header {
     background-color: white;
 }
