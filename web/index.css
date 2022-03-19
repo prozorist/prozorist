@@ -1,6 +1,7 @@
 body {
     font-family: Arial;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
+    margin: 0;
 }
 
 a {
@@ -10,4 +11,24 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 1000px;
+}
+
+#edit {
+    text-align: right;
+}
+
+#header {
+    background-color: white;
+}
+
+#about {
+    text-align: center;
+    background: orange;
 }

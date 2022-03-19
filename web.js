@@ -7,9 +7,6 @@ const html = require('./html.js')
 const tr = ([name, { country }]) => ['tr', [['td', [name]], ['td', [country]]]]
 
 /** @type {html.Element} */
-const table = ['table', {}, list.map(tr)(Object.entries(data.data))]
-
-/** @type {html.Element} */
 const ih = ['html', { lang: 'en' }, [
     ['head', [
         ['meta', { charset: 'utf-8' }],
@@ -19,10 +16,20 @@ const ih = ['html', { lang: 'en' }, [
         ['title', ['FrontList.Finance']],
     ]],
     ['body', [
-        table,
-        ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, [
-            'Contribute To The List',
+        ['div', { id: 'header' }, [
+            ['table', [
+                ['tr', [
+                    ['td', []],
+                    ['td', { id: 'edit' }, [
+                        ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, [
+                            'Edit On GitHub',
+                        ]],
+                    ]],
+                ]],
+            ]],
         ]],
+        ['div', { id: 'about' }, ['List of companies that cooperate with the Russian Federation']],
+        ['table', {}, list.map(tr)(Object.entries(data.data))],
     ]],
 ]]
 
