@@ -4,7 +4,7 @@ const object = require('functionalscript/types/object/index.js')
 const html = require('./html.js')
 
 /** @type {(_: object.Entry<data.Record>) => html.Element} */
-const tr = ([name, { country }]) => ['tr', [['td', [name]], ['td', [country]]]]
+const tr = ([name, { country }]) => ['tr', [['td', { class: 'company' }, [name]], ['td', [country]]]]
 
 /** @type {html.Element} */
 const ih = ['html', { lang: 'en' }, [

@@ -24,6 +24,7 @@ const { compose } = require('functionalscript/types/function/index.js')
  *  'script' |
  *  'table' |
  *  'td' |
+ *  'th' |
  *  'title' |
  *  'tr'
  * } Tag

@@ -32,3 +32,7 @@ table {
     text-align: center;
     background: orange;
 }
+
+.company {
+    font-weight: bold;
+}
