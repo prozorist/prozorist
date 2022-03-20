@@ -260,6 +260,7 @@ const data = {
         notes:
             'he largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
         source: bloomberg,
+      },
     'Papa Johns': {
         country: 'USA',
         industry: 'food',
