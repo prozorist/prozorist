@@ -1,4 +1,4 @@
-/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' } Country */
+/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' } Country */
 
 /**
  * @typedef {|
@@ -8,6 +8,7 @@
  *  'health' |
  *  'food' |
  *  'finance' |
+ *  'investment' |
  *  'oil' |
  *  'nutrition' |
  *  'manufacturing' |
@@ -30,6 +31,9 @@
 
 const msn =
     'https://www.msn.com/en-us/money/companies/these-companies-continue-to-do-business-in-russia/ar-AAUQUdP'
+
+const forbes =
+    'https://forbes.ua/ru/news/vlasnik-olx-ta-avito-vidmovlyayutsya-pokidati-rosiyu-olx-ukraina-ne-mozhe-na-tse-vplinuti-19032022-4836'
 
 const reuters =
     'https://www.reuters.com/business/western-companies-wrestle-with-russia-half-exits-2022-03-18'
@@ -175,6 +179,13 @@ const data = {
         notes:
             'An online service that lets internet content creators earn money, continues to operate in Russia.',
         source: msn,
+    },
+    'Prosus': {
+        country: 'Netherlands',
+        industry: 'online service',
+        notes:
+            'An online service that lets internet content creators earn money, continues to operate in Russia.',
+        source: forbes,
     },
     'Subway': {
         country: 'USA',
