@@ -17,7 +17,7 @@ const ih = ['html', { lang: 'en' }, [
         ['meta', { charset: 'utf-8' }],
         ['meta', { name: 'viewport', content: 'width=device-width'}],
         ['link', { rel: 'stylesheet', href: 'index.css' }],
-        ['link', { rel: 'icon', type: 'image/x-icon', href: 'frontlist-logo.png' }],
+        ['link', { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }],
         ['title', ['FrontList.Finance']],
     ]],
     ['body', [
