@@ -229,7 +229,7 @@ const data = {
         source: msn,
     },
     'Leroy Merlin': {
-        country: 'FR',
+        country: 'France',
         industry: 'retail',
         notes:
             'Leroy Merlin is open to increase supplies and expand the range ' +
