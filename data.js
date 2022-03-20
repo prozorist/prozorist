@@ -41,6 +41,9 @@ const forbesMetro =
 const reuters =
     'https://www.reuters.com/business/western-companies-wrestle-with-russia-half-exits-2022-03-18'
 
+const newsru =
+    'https://news.ru/economics/akcionery-prizvali-francuzskuyu-total-ujti-iz-rossii'
+
 /** @type {Data} */
 const data = {
     'Abbott Labs': {
@@ -199,6 +202,11 @@ const data = {
             'humanitarian efforts, noting that roughly 450 outlets in Russia are ' +
             'independently owned and controlled by local franchisees.',
         source: msn,
+    },
+    'TotalEnergies SE': {
+        country: 'France',
+        industry: 'oil',
+        source: newsru,
     },
     'Kraken': {
         country: 'USA',
