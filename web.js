@@ -25,7 +25,7 @@ const ih = ['html', { lang: 'en' }, [
             ['table', [
                 ['tr', [
                     ['td', { id: 'name' }, [
-                        ['img', { src: 'favicon.ico' }]
+                        ['img', { src: 'frontlist-logo.png' }]
                     ]],
                     ['td', { id: 'edit' }, [
                         ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, [

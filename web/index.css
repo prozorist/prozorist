@@ -38,12 +38,14 @@ table {
 }
 
 #header {
-    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     background-color: white;
 }
 
 #about {
-    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
     background: #ffcc00;
     font-weight: bold;
