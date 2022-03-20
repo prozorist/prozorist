@@ -1,4 +1,4 @@
-/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' } Country */
+/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' | 'Japan' } Country */
 
 /**
  * @typedef {|
@@ -45,6 +45,12 @@ const reuters =
 
 const bloomberg =
     'https://www.bloomberg.com/news/articles/2022-03-10/japan-tobacco-suspends-investments-in-russia-joining-rivals'
+
+const newsweek =
+    'https://www.newsweek.com/'
+
+const newsru =
+    'https://news.ru/economics/akcionery-prizvali-francuzskuyu-total-ujti-iz-rossii'
 
 /** @type {Data} */
 const data = {
@@ -205,6 +211,11 @@ const data = {
             'independently owned and controlled by local franchisees.',
         source: msn,
     },
+    'TotalEnergies SE': {
+        country: 'France',
+        industry: 'oil',
+        source: newsru,
+    },
     'Kraken': {
         country: 'USA',
         industry: 'finance',
@@ -249,6 +260,13 @@ const data = {
         notes:
             'he largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
         source: bloomberg,
+    'Papa Johns': {
+        country: 'USA',
+        industry: 'food',
+        notes:
+            'Independent franchise owner Christopher Wynne is refusing to close nearly 200 stores in Russia, ' +
+            'even after the company said it would suspend all corporate operations there following Moscows attack.',
+        source: newsweek,
     },
 }
 
