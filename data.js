@@ -245,7 +245,7 @@ const data = {
     },
     'Japan Tobacco International': {
         country: 'Japan',
-        industry: 'Tobacco',
+        industry: 'tobacco',
         notes:
             'he largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
         source: bloomberg,
