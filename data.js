@@ -81,7 +81,7 @@ const data = {
             'It is keeping its 50-plus Russian locations open while suspending future development in the country.',
         source: msn,
     },
-    'Hyat': {
+    'Hyatt': {
         country: 'USA',
         industry: 'hospitality',
         notes:
