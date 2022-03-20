@@ -41,6 +41,9 @@ const forbesMetro =
 const reuters =
     'https://www.reuters.com/business/western-companies-wrestle-with-russia-half-exits-2022-03-18'
 
+const newsweek =
+    'https://www.newsweek.com/'
+
 const newsru =
     'https://news.ru/economics/akcionery-prizvali-francuzskuyu-total-ujti-iz-rossii'
 
@@ -230,6 +233,14 @@ const data = {
             'CEO Brain Armstrong on March 4 tweeted that "ordinary Russians are using crypto as a lifeline." ' +
             'Still, the company would comply with any bans imposed by the U.S.government, he added.',
         source: msn,
+    },
+    'Papa Johns': {
+        country: 'USA',
+        industry: 'food',
+        notes:
+            'Independent franchise owner Christopher Wynne is refusing to close nearly 200 stores in Russia, ' +
+            'even after the company said it would suspend all corporate operations there following Moscows attack.',
+        source: newsweek,
     },
 }
 
