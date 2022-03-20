@@ -44,6 +44,9 @@ const reuters =
 const newsweek =
     'https://www.newsweek.com/'
 
+const newsru =
+    'https://news.ru/economics/akcionery-prizvali-francuzskuyu-total-ujti-iz-rossii'
+
 /** @type {Data} */
 const data = {
     'Abbott Labs': {
@@ -202,6 +205,11 @@ const data = {
             'humanitarian efforts, noting that roughly 450 outlets in Russia are ' +
             'independently owned and controlled by local franchisees.',
         source: msn,
+    },
+    'TotalEnergies SE': {
+        country: 'France',
+        industry: 'oil',
+        source: newsru,
     },
     'Kraken': {
         country: 'USA',
