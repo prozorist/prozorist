@@ -238,7 +238,7 @@ const data = {
     },
     'Philip Morris International': {
         country: 'USA',
-        industry: 'Tobacco',
+        industry: 'tobacco',
         notes:
             'Philip Morris suspends investments in Russia, scales back manufacturing',
         source: reuters,
