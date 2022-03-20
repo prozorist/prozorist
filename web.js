@@ -17,7 +17,7 @@ const ih = ['html', { lang: 'en' }, [
         ['meta', { charset: 'utf-8' }],
         ['meta', { name: 'viewport', content: 'width=device-width'}],
         ['link', { rel: 'stylesheet', href: 'index.css' }],
-        ['link', { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }],
+        ['link', { rel: 'icon', type: 'image/x-icon', href: 'frontlist-logo.png' }],
         ['title', ['FrontList.Finance']],
     ]],
     ['body', [
@@ -25,7 +25,7 @@ const ih = ['html', { lang: 'en' }, [
             ['table', [
                 ['tr', [
                     ['td', { id: 'name' }, [
-                        ['img', { src: 'favicon.ico' }]
+                        ['img', { src: 'frontlist-logo.png' }]
                     ]],
                     ['td', { id: 'edit' }, [
                         ['a', { href: 'https://github.com/prozorist/prozorist/blob/main/data.js' }, [
