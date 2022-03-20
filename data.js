@@ -14,7 +14,9 @@
  *  'manufacturing' |
  *  'advertising' |
  *  'online service' |
- *  'restaurants'
+ *  'restaurants' |
+ *  'retail' |
+ *  'tobacco'
  * } Industry
  */
 
@@ -40,6 +42,9 @@ const forbesMetro =
 
 const reuters =
     'https://www.reuters.com/business/western-companies-wrestle-with-russia-half-exits-2022-03-18'
+
+const bloomberg =
+    'https://www.bloomberg.com/news/articles/2022-03-10/japan-tobacco-suspends-investments-in-russia-joining-rivals'
 
 /** @type {Data} */
 const data = {
@@ -222,6 +227,28 @@ const data = {
             'CEO Brain Armstrong on March 4 tweeted that "ordinary Russians are using crypto as a lifeline." ' +
             'Still, the company would comply with any bans imposed by the U.S.government, he added.',
         source: msn,
+    },
+    'Leroy Merlin': {
+        country: 'FR',
+        industry: 'retail',
+        notes:
+            'Leroy Merlin is open to increase supplies and expand the range ' +
+            'after the release of several players from the Russian market',
+        source: forbes,
+    },
+    'Philip Morris International': {
+        country: 'USA',
+        industry: 'Tobacco',
+        notes:
+            'Philip Morris suspends investments in Russia, scales back manufacturing',
+        source: reuters,
+    },
+    'Japan Tobacco International': {
+        country: 'Japan',
+        industry: 'Tobacco',
+        notes:
+            'he largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
+        source: bloomberg,
     },
 }
 
