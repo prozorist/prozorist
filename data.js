@@ -35,6 +35,9 @@ const msn =
 const forbes =
     'https://forbes.ua/ru/news/vlasnik-olx-ta-avito-vidmovlyayutsya-pokidati-rosiyu-olx-ukraina-ne-mozhe-na-tse-vplinuti-19032022-4836'
 
+const forbesMetro =
+    'https://forbes.ua/ru/news/nimetskiy-riteyler-metro-ne-planue-pripinyati-robotu-v-rosii-05032022-4213'
+
 const reuters =
     'https://www.reuters.com/business/western-companies-wrestle-with-russia-half-exits-2022-03-18'
 
@@ -102,6 +105,7 @@ const data = {
     'Metro AG': {
         country: 'Germany',
         industry: 'wholesale',
+        source: forbesMetro,
     },
     'Amway': {
         country: 'USA',
