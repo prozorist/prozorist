@@ -4,7 +4,12 @@ const object = require('functionalscript/types/object/index.js')
 const html = require('./html.js')
 
 /** @type {(_: object.Entry<data.Record>) => html.Element} */
-const tr = ([name, { country }]) => ['tr', [['td', { class: 'company' }, [name]], ['td', [country]]]]
+const tr = ([name, { country, industry, notes, source }]) => ['tr', [
+    ['td', { class: 'company', title: notes ?? '' }, [name]],
+    ['td', [industry ?? '']],
+    ['td', [country]],
+    ['td', [source === undefined ? '' : ['a', { href: source }, ['source']]]]
+]]
 
 /** @type {html.Element} */
 const ih = ['html', { lang: 'en' }, [
@@ -31,7 +36,7 @@ const ih = ['html', { lang: 'en' }, [
             ]],
         ]],
         ['div', { id: 'about' }, ['List of companies that cooperate with the Russian Federation']],
-        ['table', { id: 'list' }, list.map(tr)(Object.entries(data.data))],
+        ['table', { id: 'list' }, list.map(tr)(object.sort(Object.entries(data.data)))],
     ]],
 ]]
 
