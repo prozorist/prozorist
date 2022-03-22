@@ -68,3 +68,7 @@ table {
 td {
     vertical-align: top;
 }
+
+.notes {
+    font-size: small;
+}

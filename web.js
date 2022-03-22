@@ -3,13 +3,19 @@ const list = require('functionalscript/types/list/index.js')
 const object = require('functionalscript/types/object/index.js')
 const html = require('./html.js')
 
-/** @type {(_: object.Entry<data.Record>) => html.Element} */
-const tr = ([name, { country, industry, notes, source }]) => ['tr', [
-    ['td', { class: 'company', title: notes ?? '' }, [name]],
-    ['td', [industry ?? '']],
-    ['td', [country]],
-    ['td', [source === undefined ? '' : ['a', { href: source }, ['source']]]]
-]]
+/** @type {(_: object.Entry<data.Record>) => list.List<html.Element>} */
+const tr = ([name, { country, industry, notes, source }]) => [
+    ['tr', [
+        ['td', { class: 'company' }, [name]],
+        ['td', [industry ?? '']],
+        ['td', [country]],
+        ['td', [source === undefined ? '' : ['a', { href: source }, ['source']]]]
+    ]],
+    ['tr', [
+        ['td', []],
+        ['td', { class: 'notes', colspan: '3' }, [notes ?? '']]
+    ]]
+]
 
 /** @type {html.Element} */
 const ih = ['html', { lang: 'en' }, [
@@ -32,11 +38,11 @@ const ih = ['html', { lang: 'en' }, [
                             'Edit On GitHub',
                         ]],
                     ]],
-                ]],
+                ]]
             ]],
         ]],
         ['div', { id: 'about' }, ['List of companies that cooperate with the Russian Federation']],
-        ['table', { id: 'list' }, list.map(tr)(object.sort(Object.entries(data.data)))],
+        ['table', { id: 'list' }, list.flatMap(tr)(object.sort(Object.entries(data.data)))],
     ]],
 ]]
 
