@@ -52,6 +52,9 @@ const newsweek =
 const newsru =
     'https://news.ru/economics/akcionery-prizvali-francuzskuyu-total-ujti-iz-rossii'
 
+const autonews =
+    'https://europe.autonews.com/automakers/renault-said-be-reluctant-leave-russia-over-costs'
+
 /** @type {Data} */
 const data = {
     'Abbott Labs': {
@@ -201,6 +204,13 @@ const data = {
         notes:
             'An online service that lets internet content creators earn money, continues to operate in Russia.',
         source: forbes,
+    },
+    'Renault Group': {
+        country: 'France',
+        industry: 'manufacturing',
+        notes:
+            'Renault Group is a French multinational automobile manufacturer.',
+        source: autonews,
     },
     'Subway': {
         country: 'USA',
