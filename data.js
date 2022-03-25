@@ -268,7 +268,7 @@ const data = {
         notes:
             'Taking on its duty as an employer to provide protection to its over 100 local employees' +
             'and to its community, BlaBlaCar will maintain the current service',
-        source: https://blog.blablacar.com/newsroom/news-list/blablacar-supports-ukrainians-and-stops-investments-in-russia,
+        source: 'https://blog.blablacar.com/newsroom/news-list/blablacar-supports-ukrainians-and-stops-investments-in-russia',
       },
     'Auchan': {
         country: 'France',
