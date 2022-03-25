@@ -259,7 +259,7 @@ const data = {
         country: 'Japan',
         industry: 'tobacco',
         notes:
-            'he largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
+            'the largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
         source: bloomberg,
       },
     'Blablacar': {
