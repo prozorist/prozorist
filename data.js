@@ -1,4 +1,4 @@
-/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' | 'Japan' | 'Cyprus' } Country */
+/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' | 'Japan' | 'Cyprus' | 'United Kingdom' } Country */
 
 /**
  * @typedef {|
@@ -299,7 +299,7 @@ const data = {
         source: bloomberg,
       },
     'Evraz': {
-        country: 'Britain',
+        country: 'United Kingdom',
         industry: 'manufacturing',
         notes:
             '---',
