@@ -1,4 +1,4 @@
-/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' | 'Japan' } Country */
+/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' | 'Japan' | 'Cyprus' } Country */
 
 /**
  * @typedef {|
