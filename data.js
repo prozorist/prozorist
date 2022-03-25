@@ -1,4 +1,4 @@
-/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' | 'Japan' } Country */
+/** @typedef { 'USA' | 'France' | 'Switzerland' | 'Russia'  | 'Germany' | 'Netherlands' | 'Japan' | 'Cyprus' | 'United Kingdom' } Country */
 
 /**
  * @typedef {|
@@ -16,6 +16,7 @@
  *  'online service' |
  *  'restaurants' |
  *  'retail' |
+ *  'transport' |
  *  'tobacco'
  * } Industry
  */
@@ -268,7 +269,50 @@ const data = {
         country: 'Japan',
         industry: 'tobacco',
         notes:
-            'he largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
+            'the largest cigarette producer in Russia, said it will suspend investments and marketing in that market',
+        source: bloomberg,
+      },
+    'Blablacar': {
+        country: 'France',
+        industry: 'online service',
+        notes:
+            'Taking on its duty as an employer to provide protection to its over 100 local employees' +
+            'and to its community, BlaBlaCar will maintain the current service',
+        source: 'https://blog.blablacar.com/newsroom/news-list/blablacar-supports-ukrainians-and-stops-investments-in-russia',
+      },
+    'Auchan': {
+        country: 'France',
+        industry: 'retail',
+        notes:
+            'French companies including carmaker Renault (RENA.PA) and retailer Auchan must leave the Russian market',
+        source: reuters,
+      },
+    'Danone': {
+        country: 'France',
+        industry: 'food',
+        notes:
+            'Danone (DANO.PA) said on Wednesday it would continue local production in Russia of essential dairy and infant nutrition products',
+        source: reuters,
+      },
+    'Procter & Gamble': {
+        country: 'USA',
+        industry: 'manufacturing',
+        notes:
+            '---',
+        source: reuters,
+      },
+    'Globaltrans Investment': {
+        country: 'Cyprus',
+        industry: 'transport',
+        notes:
+            '---',
+        source: bloomberg,
+      },
+    'Evraz': {
+        country: 'United Kingdom',
+        industry: 'manufacturing',
+        notes:
+            '---',
         source: bloomberg,
       },
     'Papa Johns': {
