@@ -38,7 +38,7 @@ const ih = fileExists => ['html', { lang: 'en' }, [
         ['div', { id: 'header' }, [
             ['table', [
                 ['tr', [
-                    ['td', { id: 'name' }, [
+                    ['td', [
                         ['img', { src: 'frontlist-logo.png' }]
                     ]],
                     ['td', { id: 'edit' }, [
