@@ -13,16 +13,16 @@ const tdBrand = fileExists => name => notes =>
 {
     const logoName = getLogoName(name)
     return fileExists(`web/${logoName}`)
-    ? ['td', { id: 'name' }, [['img', { src: logoName }]]]
-    : ['td', { class: 'company', title: notes ?? '' }, [name]]
+    ? ['td', { id: 'name'}, [['img', { src: logoName }]]]
+    : ['td', { id: 'name', class: 'company', title: notes ?? '' }, [name]]
 }
 
 /** @type {(fileExists: FileExists) => (_: object.Entry<data.Record>) => html.Element} */
-const tr = fileExists => ([name, { country, industry, notes, source }]) => ['tr', [
+const tr = fileExists => ([name, { country, industry, notes, source }]) => ['tr', { id: 'row'}, [
     tdBrand(fileExists)(name)(notes),
-    ['td', [industry ?? '']],
-    ['td', [country]],
-    ['td', [source === undefined ? '' : ['a', { href: source }, ['source']]]]
+    ['td', { id: 'table-data'}, [industry ?? '']],
+    ['td', { id: 'table-data'}, [country]],
+    ['td', { id: 'table-data'}, [source === undefined ? '' : ['a', { href: source }, ['source']]]]
 ]]
 
 /** @type {(_: FileExists) => html.Element} */
