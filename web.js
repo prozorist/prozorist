@@ -13,7 +13,7 @@ const tdBrand = fileExists => name => notes =>
 {
     const logoName = getLogoName(name)
     return fileExists(`web/${logoName}`)
-    ? ['td', { id: 'name'}, [['img', { src: logoName }]]]
+    ? ['td', { id: 'name'}, [['img', { id: 'logo', src: logoName }]]]
     : ['td', { id: 'name', class: 'company', title: notes ?? '' }, [name]]
 }
 
