@@ -6,7 +6,7 @@ const html = require('./html.js')
 /** @typedef {(fileName: string) => boolean} FileExists */
 
 /** @type {(_: string) => string} */
-const getLogoName = name => `logo/${name.toLowerCase()}.png`
+const getLogoName = name => `logo/${name.replace(/\s+/g, '_').toLowerCase()}.png`
 
 /** @type {(fileExists: FileExists) => (name: string) => (notes: string|undefined) => html.Element} */
 const tdBrand = fileExists => name => notes =>
