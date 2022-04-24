@@ -3,16 +3,30 @@ const list = require('functionalscript/types/list/index.js')
 const object = require('functionalscript/types/object/index.js')
 const html = require('./html.js')
 
-/** @type {(_: object.Entry<data.Record>) => html.Element} */
-const tr = ([name, { country, industry, notes, source }]) => ['tr', [
-    ['td', { class: 'company', title: notes ?? '' }, [name]],
-    ['td', [industry ?? '']],
-    ['td', [country]],
-    ['td', [source === undefined ? '' : ['a', { href: source }, ['source']]]]
+/** @typedef {(fileName: string) => boolean} FileExists */
+
+/** @type {(_: string) => string} */
+const getLogoName = name => `logo/${name.replace(/\s+/g, '_').toLowerCase()}.png`
+
+/** @type {(fileExists: FileExists) => (name: string) => (notes: string|undefined) => html.Element} */
+const tdBrand = fileExists => name => notes =>
+{
+    const logoName = getLogoName(name)
+    return fileExists(`web/${logoName}`)
+    ? ['td', { class: 'company'}, [['img', { id: 'logo', src: logoName }]]]
+    : ['td', { class: 'company', title: notes ?? '' }, [name]]
+}
+
+/** @type {(fileExists: FileExists) => (_: object.Entry<data.Record>) => html.Element} */
+const tr = fileExists => ([name, { country, industry, notes, source }]) => ['tr', { id: 'row'}, [
+    tdBrand(fileExists)(name)(notes),
+    ['td', { id: 'table-data'}, [industry ?? '']],
+    ['td', { id: 'table-data'}, [country]],
+    ['td', { id: 'table-data'}, [source === undefined ? '' : ['a', { href: source }, ['source']]]]
 ]]
 
-/** @type {html.Element} */
-const ih = ['html', { lang: 'en' }, [
+/** @type {(_: FileExists) => html.Element} */
+const ih = fileExists => ['html', { lang: 'en' }, [
     ['head', [
         ['meta', { charset: 'utf-8' }],
         ['meta', { name: 'viewport', content: 'width=device-width'}],
@@ -24,7 +38,7 @@ const ih = ['html', { lang: 'en' }, [
         ['div', { id: 'header' }, [
             ['table', [
                 ['tr', [
-                    ['td', { id: 'name' }, [
+                    ['td', [
                         ['img', { src: 'frontlist-logo.png' }]
                     ]],
                     ['td', { id: 'edit' }, [
@@ -36,11 +50,12 @@ const ih = ['html', { lang: 'en' }, [
             ]],
         ]],
         ['div', { id: 'about' }, ['List of companies that cooperate with the Russian Federation']],
-        ['table', { id: 'list' }, list.map(tr)(object.sort(Object.entries(data.data)))],
+        ['table', { id: 'list' }, list.map(tr(fileExists))(object.sort(Object.entries(data.data)))],
     ]],
 ]]
 
-const indexHtml = html.htmlToString(ih)
+/** @type {(_: FileExists) => string} */
+const indexHtml = fileExists => html.htmlToString(ih(fileExists))
 
 module.exports = {
     /** @readonly */
