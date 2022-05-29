@@ -1,7 +1,7 @@
 const data = require('./data.js')
 const list = require('functionalscript/types/list/index.js')
 const object = require('functionalscript/types/object/index.js')
-const html = require('./html.js')
+const html = require('functionalscript/html/index.js')
 
 /** @typedef {(fileName: string) => boolean} FileExists */
 
