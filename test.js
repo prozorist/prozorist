@@ -1,5 +1,5 @@
 const { indexHtml } = require('./web.js')
-const html = require('./html.js')
+const html = require('functionalscript/html/index.js')
 
 {
     /** @type {html.Element} */
